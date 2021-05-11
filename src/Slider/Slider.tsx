@@ -3,6 +3,7 @@ import React, { FC, ReactNode, useCallback, useEffect, useState } from "react";
 import styles from "./Slider.module.scss";
 
 interface ISlide {
+  padded?: boolean;
   content?: ReactNode;
   backgroundImage?: string;
   horizontalPosition: "left" | "middle" | "right";
@@ -11,6 +12,7 @@ interface ISlide {
 
 const slides: ISlide[] = [
   {
+    padded: true,
     backgroundImage: "/1.jpg",
     horizontalPosition: "middle",
     verticalPosition: "center",
@@ -18,12 +20,12 @@ const slides: ISlide[] = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, nulla!",
   },
   {
-    // backgroundImage: "/2.jpg",
     horizontalPosition: "left",
     verticalPosition: "bottom",
     content: <h1>Hello world</h1>,
   },
   {
+    padded: true,
     backgroundImage: "/3.jpg",
     horizontalPosition: "right",
     verticalPosition: "top",
@@ -36,11 +38,12 @@ const Slide: FC<ISlide> = ({
   horizontalPosition,
   verticalPosition,
   content,
+  padded,
 }) => {
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      className={styles.slide}
+      className={classNames(styles.slide, { [styles.padded]: padded })}
     >
       <div
         className={classNames(

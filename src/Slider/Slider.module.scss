@@ -17,6 +17,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
+  &.padded {
+    width: calc(100vw - 10vh);
+    height: 90vh;
+    margin: 5vh;
+  }
 }
 
 .left_arrow,
@@ -93,7 +98,7 @@
     height: 6px;
     width: 100%;
     max-width: 0%;
-    transition: max-width 0.5s ease-in-out 0.25s;
+    transition: max-width 0.75s ease-in-out;
     background-color: white;
   }
   &.active {
@@ -119,6 +124,7 @@
 }
 
 .article_content {
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   padding: 20px;
