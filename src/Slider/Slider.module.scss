@@ -131,3 +131,29 @@
   background-color: black;
   color: white;
 }
+
+.article_content {
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
+  }
+  ol {
+    font-size: 20px;
+  }
+}
+
+.article_text {
+  padding: 40px;
+  margin: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 48px;
+  overflow-y: auto;
+  background-color: #fff;
+  color: black;
+  &::--webkit-scrollbar {
+    display: none;
+  }
+}
